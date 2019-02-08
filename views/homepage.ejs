@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Corva Compute</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+
+<div class="container">
+    
+        <h1 style="text-align:center">Welcome to Corva Compute</h1>
+        
+        <div style="width:30%; margin:25px auto;">
+            <p>Your request id is <strong><%=requestID%></strong> </p>
+            <form action="/compute/<%=requestID%>" method="POST">
+                
+                <div class="form-group">
+                    <label for="descriptionInput">Please enter your request</label>
+                    <textarea class="form-control" id="name" type="text" rows ="10" placeholder="Input your JSON request" name="name" ></textarea>
+                </div>
+                
+                <button class="btn btn-lg btn-primary btn-block">submit</button>
+                
+            </form>
+        </div>
+        <div>
+            <h1>Example Requests</h1>
+            <ul>
+                <li>{“timestamp”: 1493758596,“data”: [{ “title”: “Part 1”, “values”: [0, 3, 5, 6, 2, 9] },{ “title”: “Part 2”, “values”: [6, 3, 1, 3, 9, 4] }]}</li>
+                <li>{“timestamp”: 123,“data”: [{ “title”: “Part 1”, “values”: [4, 6, 8, 6, 2, 1] },{ “title”: “Part 2”, “values”: [8, 8, 1, 2, 9, 5] }]}</li>
+                <li>{“timestamp”: 375,“data”: [{ “title”: “Part 1”, “values”: [0, 2, 3, 6, 5, 7] },{ “title”: “Part 2”, “values”: [6, 3, 3, 4, 8, 6] }]}</li>
+            </ul>
+        </div>
+        <div>
+            <p><b>Note:</b> Enter your request id in the url path after compute: http://XXX/compute/request_id</p>
+        </div>
+</div>
+
+</body>
+</html>
